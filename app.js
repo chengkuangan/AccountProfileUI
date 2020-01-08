@@ -38,8 +38,9 @@ var custRouter = require('./routers/customerRouter.js');
 // --- The sequence of which to call the keycloak method is important. 
 
 //app.use('/', keycloak.protect(), custRouter);   // This must be called first before any other Authorization enforcements.
+
+app.use('/', keycloak.protect('realm:account-viewer'), custRouter);   // This must be called first before any other Authorization enforcements.
 app.use('/customer', keycloak.enforcer('ManagerResources:manage'), custRouter);
-app.use('/*', keycloak.protect('realm:account-viewer'), custRouter);   // This must be called first before any other Authorization enforcements.
 
 //have our app listen on port 3000
 app.listen(port);
