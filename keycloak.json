@@ -1,0 +1,14 @@
+{
+  "realm": "PaymentGateway",
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "AccountProfile",
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": "96d6f906-271b-4521-8975-531100c6e112"
+  },
+  "confidential-port": 0,
+  "policy-enforcer": {
+    "on-deny-redirect-to" : "/AccountProfile/static/permission-denied.html"
+  }
+}

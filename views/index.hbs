@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Customer Account</title>
+    <!-- link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+</head>
+
+<body>
+    <center>
+        <br>
+        <H1>Customer Account Summary</H1>
+        <br>
+        <br><br>
+        <table align=center cellspacing=5 cellpadding=5 border=0 width="80%">
+            <tr>
+                <td align=right>
+                    <input type="button" name="btnCreate" value="Create New" onclick="window.location.href='/customer'">&nbsp;&nbsp;
+                    <input type="button" name="btnDelete" value="Delete">&nbsp;&nbsp;
+                    <input type="button" name="btnLogout" value="Logout" onclick="javascript:window.location.href='/logout'">
+                    </td>
+            </tr>
+            <tr>
+                <td>
+                    <table align=center cellspacing=5 cellpadding=5 border=1 width="100%">
+                        <tr>
+                            <th>Select</th>
+                            <th>Account No</th>
+                            <th>Name</th>
+                            <th>Acc. Created Date</th>
+                            <th>Acc. Last Updated Date</th>
+                            <!--<th>Balance ($)</th>
+                            <th>Bal. Last Updated Date</th>-->
+                        </tr>
+                        {{#each customer}}
+                        <tr>
+                            <td align=center><input type="checkbox" name="chkCustomer" value="{{this.accountId}}"></td>
+                            <td><a href="/customer?custid={{this.accountId}}">{{this.accountId}}</a>
+                            </td>
+                            <td>{{this.name}}</td>
+                            <td align="right">{{this.createdDate}}</td>
+                            <td align="right">{{this.lastUpdatedDate}}</td>
+                           <!-- <td align="right">{{this.formattedBalance}}</td>
+                            <td align="right">{{this.formattedBalanceLastUpdatedDate}}</td> -->
+                        </tr>
+                        {{/each}}
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

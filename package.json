@@ -1,0 +1,13 @@
+{
+  "name": "AccountProfileUI",
+  "version": "0.0.1",
+  "description": "Account Profile UI",
+  "private": true,
+  "dependencies": {
+    "axios": "latest",
+    "express": "latest",
+    "express-session": "^1.17.0",
+    "hbs": "^4.0.6",
+    "keycloak-connect": "file:local_packages/rh-sso-7.3.5-nodejs-adapter"
+  }
+}
